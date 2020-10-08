@@ -12,12 +12,14 @@ package cse360assignment02;
 
 public class AddingMachine {
     private int total;
+    private String calculations;
 
     /**
      * Constructor, initializes running total variable
      */
     public AddingMachine() {
         total = 0; // not needed - included for clarity
+        calculations = "0";
     }
 
     /**
@@ -25,7 +27,7 @@ public class AddingMachine {
      * @return the running total, var total
      */
     public int getTotal() {
-        return 0;
+        return total;
     }
 
     /**
@@ -33,6 +35,8 @@ public class AddingMachine {
      * @param int value to add to running total 
      */
     public void add(int value) {
+        total += value;
+        calculations += " + " + value;
     }
 
     /**
@@ -40,6 +44,8 @@ public class AddingMachine {
      * @param int value to subtract from running total 
      */
     public void subtract(int value) {
+        total -= value;
+        calculations += " - " + value;
     }
 
     /**
@@ -47,12 +53,14 @@ public class AddingMachine {
      * @return string detailing all previous calculations made
      */
     public String toString() {
-        return "";
+        return calculations;
     }
 
     /**
      * Resets running total and previous calculations made
      */
     public void clear() {
+        total = 0;
+        calculations = "0";
     }
 }
